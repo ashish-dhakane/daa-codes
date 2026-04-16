@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DAA Code Hub</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 20px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 15px;
+            margin: 15px auto;
+            width: 400px;
+            border-radius: 10px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            background: #3b82f6;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2563eb;
+        }
+
+        pre {
+            background: #020617;
+            padding: 15px;
+            margin: 20px;
+            overflow-x: auto;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🚀 DAA Code Hub</h1>
+
+<!-- Bellman Ford -->
+<div class="card">
+    <h2>Bellman Ford</h2>
+    <button onclick="copyFile('Cpp/BF5.cpp')">C++</button>
+    <button onclick="copyFile('python/BF5.py')">Python</button>
+    <button onclick="copyFile('Java/BF5.java')">Java</button>
+</div>
+
+<!-- Binary Search -->
+<div class="card">
+    <h2>Binary Search</h2>
+    <button onclick="copyFile('Cpp/BinarySearch.cpp')">C++</button>
+    <button onclick="copyFile('python/BinarySearch.py')">Python</button>
+    <button onclick="copyFile('Java/BinarySearch.java')">Java</button>
+</div>
+
+<!-- Heap Sort -->
+<div class="card">
+    <h2>Heap Sort</h2>
+    <button onclick="copyFile('Cpp/HeapSort.cpp')">C++</button>
+    <button onclick="copyFile('python/HeapSort.py')">Python</button>
+    <button onclick="copyFile('Java/HeapSort.java')">Java</button>
+</div>
+
+<!-- Job Sequencing -->
+<div class="card">
+    <h2>Job Sequencing</h2>
+    <button onclick="copyFile('Cpp/JobSequencing.cpp')">C++</button>
+    <button onclick="copyFile('python/JobSeqencing.py')">Python</button>
+    <button onclick="copyFile('Java/JobSequencing.java')">Java</button>
+</div>
+
+<!-- Knapsack -->
+<div class="card">
+    <h2>Knapsack</h2>
+    <button onclick="copyFile('Cpp/Knapsack.cpp')">C++</button>
+    <button onclick="copyFile('python/FractionalKnapsack.py')">Python</button>
+    <button onclick="copyFile('Java/FractionalKnapsack.java')">Java</button>
+</div>
+
+<!-- N-Queen -->
+<div class="card">
+    <h2>N-Queen</h2>
+    <button onclick="copyFile('Cpp/NQueen.cpp')">C++</button>
+    <button onclick="copyFile('python/NQueen.py')">Python</button>
+    <button onclick="copyFile('Java/NQueens.java')">Java</button>
+</div>
+
+<!-- Quick Sort -->
+<div class="card">
+    <h2>Quick Sort</h2>
+    <button onclick="copyFile('Cpp/QuickSort.cpp')">C++</button>
+    <button onclick="copyFile('python/QuickSort.py')">Python</button>
+    <button onclick="copyFile('Java/QuickSort.java')">Java</button>
+</div>
+
+<!-- Code display -->
+<pre id="codeBox">Click any button to view & copy code...</pre>
+
+<script>
+async function copyFile(path) {
+    try {
+        const response = await fetch(path);
+        const text = await response.text();
+
+        document.getElementById("codeBox").innerText = text;
+
+        await navigator.clipboard.writeText(text);
+        alert("✅ Code copied!");
+    } catch (err) {
+        alert("❌ Error: " + err);
+    }
+}
+</script>
+
+</body>
+</html>
